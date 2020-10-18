@@ -1,6 +1,5 @@
 package com.clay.rsautil.entity;
 
-import com.clay.rsautil.util.PrivateKeyConverter;
 import lombok.Data;
 
 import javax.persistence.*;

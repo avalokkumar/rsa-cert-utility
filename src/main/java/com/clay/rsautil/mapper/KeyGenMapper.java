@@ -1,47 +1,21 @@
 package com.clay.rsautil.mapper;
-import com.clay.rsautil.entity.KeyGenData;
-import com.clay.rsautil.entity.PrivateKey;
+
 import com.clay.rsautil.model.KeyGenResponse;
-import org.springframework.stereotype.Service;
+import org.mapstruct.IterableMapping;
+import org.mapstruct.Mapper;
 
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
+@Mapper(componentModel = "spring")
+public interface KeyGenMapper {
 
-@Service
-public class KeyGenMapper {
+    KeyGenResponse entityToModel(com.clay.rsautil.entity.KeyGenData keyGenData);
 
-    public KeyGenResponse entityToModel(com.clay.rsautil.entity.KeyGenData keyGenData) {
-        return KeyGenResponse.builder()
-                .id(keyGenData.getId())
-                .algorithm(keyGenData.getAlgorithm())
-                .keySize(keyGenData.getKeySize())
-                .publicKey(keyGenData.getPublicKey())
-                .privateKey(keyGenData.getPrivateKey())
-                .build();
-    }
+    com.clay.rsautil.entity.KeyGenData modelToEntity(final KeyGenResponse keyGenRequest);
 
-    public com.clay.rsautil.entity.KeyGenData modelToEntity(final KeyGenResponse keyGenResponse) {
-        KeyGenData keyGenData = new KeyGenData();
-        keyGenData.setId(keyGenResponse.getId());
-        keyGenData.setAlgorithm(keyGenResponse.getAlgorithm());
-        keyGenData.setKeySize(keyGenResponse.getKeySize());
-        keyGenData.setPublicKey(keyGenResponse.getPublicKey());
-        keyGenData.setPrivateKey(keyGenResponse.getPrivateKey());
+    @IterableMapping(elementTargetType = KeyGenResponse.class)
+    List<KeyGenResponse> entityToModel(List<com.clay.rsautil.entity.KeyGenData> keyGenList);
 
-        return keyGenData;
-    }
-
-    public List<KeyGenResponse> entityToModel(List<com.clay.rsautil.entity.KeyGenData> keyGenList) {
-
-        return keyGenList.stream()
-                .map(this::entityToModel)
-                .collect(toList());
-    }
-
-    public List<com.clay.rsautil.entity.KeyGenData> modelToEntity(List<KeyGenResponse> keyGenResponseList) {
-        return keyGenResponseList.stream()
-                .map(this::modelToEntity)
-                .collect(toList());
-    }
+    @IterableMapping(elementTargetType = com.clay.rsautil.entity.KeyGenData.class)
+    List<com.clay.rsautil.entity.KeyGenData> modelToEntity(List<KeyGenResponse> keyGenList);
 }

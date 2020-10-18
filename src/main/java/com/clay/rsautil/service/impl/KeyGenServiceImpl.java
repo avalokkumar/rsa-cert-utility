@@ -68,11 +68,12 @@ public class KeyGenServiceImpl implements KeyGenService {
 
     @Override
     public void deleteKeyById(BigInteger id) throws KeysNotFoundException {
-        KeyGenData keyGenData = keyGenDataRepository.findById(id).orElseThrow(() -> new KeysNotFoundException("Keys Not present for given ID"));
+        KeyGenData keyGenData = keyGenDataRepository.findById(id)
+                .orElseThrow(() -> new KeysNotFoundException("Keys Not present for given ID"));
         keyGenDataRepository.delete(keyGenData);
     }
 
-    public String toBase64(byte[] data) {
+    private String toBase64(byte[] data) {
         return Base64.getEncoder().encodeToString(data);
     }
 }

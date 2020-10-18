@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "0e9cef5a-a101-4f51-b371-6f55b25c59e6",
+		"name": "RSA_Cert_Utility",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All KeyPairs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/security/keys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"security",
+						"keys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create KeyPairs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"algorithm\": \"RSA\",\n    \"key_size\": 1024\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/security/keys/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"security",
+						"keys",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get KeyPairs by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/security/keys/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"security",
+						"keys",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete KeyPairs",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/security/keys/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"security",
+						"keys",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Digital Certificate By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/security/certificate/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"security",
+						"certificate",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Digital Certificate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"algorithm\": \"RSA\",\n    \"signature_algorithm\": \"SHA256_WITH_RSA\",\n    \"key_size\": 2048,\n    \"common_name\": \"claycorp.com\",\n    \"certificate_expiry_months\": 24\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/security/certificate/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"security",
+						"certificate",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Digital Certificate",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/security/certificate/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"security",
+						"certificate",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Certificates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/security/certificate/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"security",
+						"certificate",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
