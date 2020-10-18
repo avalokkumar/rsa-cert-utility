@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/rsavault
+    username: root
+    password: n0p0d
+  jpa:
+    hibernate:
+      ddl-auto: create
