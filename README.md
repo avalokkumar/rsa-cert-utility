@@ -1,12 +1,12 @@
 # rsa-cert-utility
 APIs to generate RSA Keys and X509Certificate (Self Signed Certificate)
 
+Tools: Spring Boot, Spring Data JPA, Lombok, Bouncy Castle, Mapstruct
+DB - MySQL
+
 KeyGeneration Service:
 =====
 * It provides APIs to get, create and delete KeyPairs generated based on the algorithm and keySize provided
-
-Tools: Spring Boot, Spring Data JPA, Lombok, Bouncy Castle, Mapstruct
-DB - MySQL
 
 Request for KeyPair Generation:
 =====
