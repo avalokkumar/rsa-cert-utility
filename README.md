@@ -4,8 +4,8 @@ APIs to generate RSA Keys and X509Certificate (Self Signed Certificate)
 #KeyGeneration Service: 
 * It provides APIs to get, create and delete KeyPairs generated based on the algorithm and keySize provided
 
-##Tools: Spring Boot, Spring Data JPA, Lombok, Bouncy Castle, Mapstruct
-##DB - MySQL
+Tools: Spring Boot, Spring Data JPA, Lombok, Bouncy Castle, Mapstruct
+DB - MySQL
 
 Request for KeyPair Generation:
 =====
@@ -22,7 +22,7 @@ Response for KeyPair Generation:
 * public_key
 * encrypted_private_key
 
-Digital Certificate Generation Service:
+#Digital Certificate Generation Service:
 * It Provides APIs to get, create and delete X509Certificate(Self Signed Certificate) based on the parameters provided
 
 Request for Digital Certificate Generation:
