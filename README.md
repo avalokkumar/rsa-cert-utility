@@ -3,7 +3,7 @@
 
 
 # Introduction
-A Spring, MySQL, and Gradle-based service to generate public keys, private keys, and X509Certificates is a web service that allows users to generate secure cryptographic keys and certificates. 
+A RSA Cert Utility is a web service based on Spring, MySQL, and Gradle-based service that allows users to generate secure cryptographic keys(public keys, private keys) and certificates(X509Certificates). 
 
 It is built using the Spring Framework and uses MySQL as its database, and is built and managed using the Gradle build tool. The service provides a set of APIs that allow users to generate public and private keys, as well as X509Certificates, which are widely used to secure communication over the internet. This service can be useful for domain owners and system administrators who need to generate secure keys and certificates for use in their applications or websites.
 
